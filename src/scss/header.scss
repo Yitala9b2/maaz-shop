@@ -1,12 +1,12 @@
 
 .header {
-    transition: all 0.3s ease 0s;
+    
     position: fixed ;
     width: 100%;
     z-index: 90;
     padding-top: 20px;
     background-color: transparent;
-    transition: 'background' 0.1s ease 0s;
+    transition: all 0.3s ease 0s;
     @media (max-width: $mobile) {
         background: rgba(0, 0, 0, 0.815);
         padding-bottom: 20px;
@@ -27,8 +27,12 @@
   ._header-scroll{
     background: rgba(0, 0, 0, 0.815);
         padding-top: 0;
-        padding-bottom: 0;
+        
         transition: all 0.3s ease 0s;
+        @media (max-width: $mobile) {
+            background: rgba(0, 0, 0, 0.815);
+            padding-bottom: 0;
+        }
         & .logo-text{
             height: 100%;
             display: block;
@@ -77,13 +81,7 @@
         & .menu__location{
             position: absolute;
             left: 250px;
-            @media (max-width: 1370px) {
-            bottom: 10px;
-            left: 35px;
-            }
-            @media (max-width: $mobile) {
-                position: static;
-                }
+            
         }
     }
     &__item {
