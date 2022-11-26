@@ -374,7 +374,6 @@ textarea.input {
 ._header-scroll {
   background: rgba(0, 0, 0, 0.815);
   padding-top: 0;
-  padding-bottom: 0;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -1149,13 +1148,6 @@ button.swiper-pagination-bullet {
   }
 }
 
-@media (max-width: 1370px) {
-  .menu__list .menu__location {
-    bottom: 10px;
-    left: 35px;
-  }
-}
-
 @media (max-width: 1050px) {
   .menu__phone {
     font-size: 14px;
@@ -1270,8 +1262,9 @@ button.swiper-pagination-bullet {
     padding-bottom: 20px;
   }
 
-  .menu__list .menu__location {
-    position: static;
+  ._header-scroll {
+    background: rgba(0, 0, 0, 0.815);
+    padding-bottom: 0;
   }
 
   .menu__link:hover:after {
