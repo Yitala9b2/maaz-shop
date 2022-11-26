@@ -1,0 +1,324 @@
+
+.header {
+    transition: all 0.3s ease 0s;
+    position: fixed ;
+    width: 100%;
+    z-index: 90;
+    padding-top: 20px;
+    background-color: transparent;
+    transition: 'background' 0.1s ease 0s;
+    @media (max-width: $mobile) {
+        background: rgba(0, 0, 0, 0.815);
+        padding-bottom: 20px;
+    }
+    &__container{
+        height: 100%;
+        position: relative;
+    }
+    &__menu {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 20;
+    }
+   
+}
+  ._header-scroll{
+    background: rgba(0, 0, 0, 0.815);
+        padding-top: 0;
+        padding-bottom: 0;
+        transition: all 0.3s ease 0s;
+        & .logo-text{
+            height: 100%;
+            display: block;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-family: "GrandhiSerif";
+        }
+        & .menu__item{
+            @media (min-width: $mobile) {
+            background-color: transparent;
+
+            }
+        }
+        
+    }
+.menu{
+    &__logo{
+        order: 0;
+        position: relative;
+        height: 94px;
+        width: 94px;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__info{
+        display: flex;
+        >:nth-child(2){
+            margin-left: 45px;
+        }
+    }
+    &__body{
+        letter-spacing: 0.15em;
+        z-index: 3;
+    }
+    &__list{
+        height: 100%;
+        display: flex;
+
+        
+        & .menu__location{
+            position: absolute;
+            left: 250px;
+            @media (max-width: 1370px) {
+            bottom: 10px;
+            left: 35px;
+            }
+            @media (max-width: $mobile) {
+                position: static;
+                }
+        }
+    }
+    &__item {
+        background-color: rgba(0, 0, 0, 0.61);
+        height: 100%;
+        
+       
+    }
+
+    &__link {
+        padding: 40px 20px;
+        object-fit: cover;
+        display: block;
+        position: relative;
+        color: white;
+        min-height: 100%;
+        span{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+     &:after {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 10px;
+            z-index: 5;
+        }   &:hover:after {
+            border: 2px dashed rgba(252, 252, 252, 0.473);
+            height: 90%;
+            width: 90%;
+            @media (max-width: $mobile) {
+                border: none;
+            }
+        }
+       
+
+
+    }
+    &__navigation{
+        display: flex;
+    }
+    &__social{
+        display: flex;
+        & .menu__item{
+            margin-left: 15px;
+        }
+    }
+     &__link_ico{
+        position: relative;
+        height: 100%;
+        display: block;
+        width: 50px;
+        img{
+            position: absolute;
+            width: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        }
+    &__phone{
+        font-family: "intro-book";
+        position: relative;
+        line-height:  21.09px;
+        color: white;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & :nth-child(1)::before{
+            content: url('@img/call-calling.svg');
+            left: -30px;
+            position: absolute;
+            padding-right: 10px;
+            object-fit: cover;
+
+        }
+        @media (max-width: 1050px) {
+            font-size: 14px;
+        }
+    }
+}
+._header-scroll .menu__logo a img{
+    display: none;
+}
+@media (max-width: $tablet) {
+    .menu__link{
+        padding: 30px 10px;
+    }
+    
+    .menu__list{
+        font-size: 14px;
+    }
+        .menu__social .menu__item{
+            margin-left: 8px;
+        }
+    
+    .menu__logo{
+        z-index: 50;
+        
+    }
+    .menu__phone{
+        z-index: 50;
+        white-space: nowrap;
+        
+    }
+    .menu__link_ico{
+        width: 40px;
+    }
+}
+@media (max-width: 850px) {
+    .menu__phone{
+        display: none;
+    }
+}
+@media (max-width: $mobile){
+    .menu__body{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        z-index:4;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.527);
+        transition: left 0.3s ease 0s;
+        backdrop-filter: blur(7px);
+        overflow: auto;
+        
+    };
+    .menu__list  {
+        padding-top: 0;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        font-size: 20px;
+        justify-content: center;
+        align-items: center;
+        line-height: 40px;
+        z-index:4;
+        margin-left: 0px;
+        & >:nth-child(2){
+            margin-left: 0;
+        }
+        & >:last-child{
+            margin-top: 0;
+        }
+    }
+    .menu__list >:nth-child(n){
+        margin-right: 0px;
+        margin-top: 15px;
+    }
+    .menu-open .menu__body{
+        left: 0;
+    }
+    .menu__item{
+        height: auto;
+        width: 80%;
+        text-align: center;
+        background-color: #000;
+    }
+    .menu__logo{
+        z-index: 15;
+    }
+    .menu__link{
+        
+        padding: 10px 5px;
+        display: block;
+        position: relative;
+        color: white;
+        
+    }
+}
+
+
+
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+        order: 3;
+		width: rem(30);
+		height: rem(20);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+            border-radius: 15px;
+			height: rem(4);
+			background-color: rgb(255, 255, 255);
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(2));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(3));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+
+
+
