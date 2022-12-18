@@ -132,11 +132,16 @@ body {
 
 // Подключение стилей отдельных блоков
 @import "header";
-@import "catalog";
+@import "popular";
+
 @import "sites-shop";
 @import "contacts-shop";
+@import "cart";
 @import "footer";
 
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "single";
+@import "catalog";
+@import "page-cart";

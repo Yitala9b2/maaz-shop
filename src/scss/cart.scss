@@ -1,0 +1,165 @@
+.dws {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    
+    margin-left: 35px;
+    margin-bottom: 15px;
+    z-index: 20;
+    left: 0;
+    @media (max-width: $mobile) {
+        margin-left: 15px;
+
+    }
+
+
+}
+
+.pulse,
+.bloc,
+.card{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+
+    @media (max-width: $mobile) {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.bloc {
+    cursor: pointer;
+    z-index:1;
+    overflow: hidden;
+}
+
+.pulse {
+    
+    background: black;
+    position: relative;
+    transition: .5s;
+}
+
+.card {
+    font-size: 50px;
+    line-height: 20px;
+    animation: phone .9s ease-in-out infinite;
+
+    img {
+        width: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 40px;
+    }
+}
+
+.text {
+    position: absolute;
+    opacity: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    top: 35px;
+    left: 7px;
+    display: block;
+    font-size: 15px;
+    transform: scaleX(-1);
+    transition: .5s ease-in-out;
+
+    @media (max-width: $tablet) {
+        font-size: 13px;
+        left: 5px;
+        top: 25px;
+    }
+    @media (max-width: $mobile) {
+        font-size: 10px;
+        left: 10px;
+        top: 30px;
+    }
+}
+
+.pulse:hover {
+    background: white;
+}
+
+.pulse:hover .phone img {
+    transition: .5s ease-in-out;
+    transform: scale(0);
+}
+
+.pulse:hover .text {
+    transform: scaleX(1);
+    transition: .5s ease-in-out;
+    opacity: 1;
+}
+
+.pulse:hover::before,
+.pulse:hover::after {
+    content: '';
+    position: absolute;
+    border: 1px solid white;
+    left: -20px;
+    right: -20px;
+    top: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    animation: pulse 1.8s linear infinite;
+    opacity: 0;
+}
+
+.pulse:hover::after {
+    animation-delay: .5s;
+}
+
+@keyframes phone {
+
+    0%,
+    100% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(21deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+.cart-count{
+    background-color: black;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: $mobile) {
+        width: 20px;
+        font-size: 15px;
+        height: 20px;
+    }
+}

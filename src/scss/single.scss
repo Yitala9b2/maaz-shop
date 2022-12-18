@@ -1,0 +1,117 @@
+.single{
+    &__block{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 100px 0;
+        @media (max-width: $tablet) {
+            padding: 50px 0 100px;
+        }
+    }
+    &__slider{
+        flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+      
+    width: 100%;
+    min-height: 1px;
+    @media (max-width: $mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    }
+    &__content{
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+        padding-left: 20px;
+        font-family: "intro-book";
+        color: white;
+        @media (max-width: $mobile) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-top: 50px;
+            padding-left: 0;
+        }
+    }
+}
+.slick-slider .slick-slide > div > div, .slick-slider .slick-slide > div > figure {
+    vertical-align: middle;
+}
+
+.product-name{
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.single-product-details .prices-group .old-price {
+    font-size: 1.3rem;
+    color: #8d8d8d;
+}
+    .single-product-details .prices-group .price {
+        font-size: 1.6rem;
+    }
+    .prices-stock-status{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+    .product-desc{
+        margin-bottom: 15px;
+        line-height: 1.8;
+    }
+.quantity-btn-group{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.single-product-details .configurable-item {
+    margin-bottom: 20px; }
+    .single-product-details .configurable-item:last-child {
+      margin-bottom: 0; }
+    .single-product-details .configurable-item .configurable-name {
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      margin-bottom: 8px; }
+      .single-product-details .configurable-item .configurable-name b {
+  
+        margin-left: 5px;
+        font-size: 1.3rem; }
+    .single-product-details .configurable-item .configurable-list li {
+        border: 1px solid #dddddd5d;
+        color: #8d8d8d;
+      cursor: pointer;
+      
+      height: 40px;
+      padding: 3px;
+      font-size: 1.3rem;
+      display: block;
+      text-align: center;
+      transition: 0.3s ease-out;
+      margin-right: 5px;
+      overflow: hidden;
+      width: 40px; }
+      .single-product-details .configurable-item .configurable-list{
+        display: flex;
+      }
+      .single-product-details .configurable-item .configurable-list li.active, .single-product-details .configurable-item .configurable-list li:hover {
+        border-color: $brand;
+        color: $brand; }
+      .single-product-details .configurable-item .configurable-list li span {
+        line-height: 30px;
+        display: block; }
+
+        .list-btn-group{
+            box-sizing: content-box;
+        }
+        .white-bg{
+            background-color: white;
+        }
+        .see-also{
+            padding-bottom: 100px;
+        }

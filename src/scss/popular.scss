@@ -1,0 +1,405 @@
+.btn {
+    border: none;
+    
+    -webkit-transition: 0.3s  ease-out;
+    -moz-transition: 0.3s  ease-out;
+    -o-transition: 0.3s  ease-out;
+    transition: 0.3s  ease-out;
+    padding: 20px 25px;
+    font-size: 1.3rem;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    text-align: center;
+}
+
+.btn:active,
+.btn:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn.btn-black {
+    background-color: white;
+    color: black;
+}
+
+
+.btn.btn-black:hover {
+    background-color: rgba(0, 0, 0, 0.788);
+    color: white;
+}
+.popular__catalog{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+.catalog__link{
+    letter-spacing: 2px;
+    font-size: 20px;
+    position: relative;
+    background-color: white;
+    &:hover{
+        background: rgba(0, 0, 0, 0.541);
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    &:hover ::after{
+        content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 99%;
+    height: 93%;
+    border: 2px dashed rgba(252, 252, 252, 0.664);
+    border-radius: 10px;
+    }
+    }
+
+    a{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        padding: 20px 40px;
+        @media (max-width: $mobile) {
+            padding: 15px;
+        }
+    }
+}
+.catalog__carts {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+}
+
+.cart {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+      @media (min-width: $mobileSmall) {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    @media (min-width: $tablet) {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+  
+}
+.popular__container{
+    padding-bottom: 100px;
+    @media (max-width: $mobile) {
+        padding-bottom: 70px;
+    }
+    @media (max-width: $mobileSmall) {
+        padding-bottom: 50px;
+    }
+}
+.products-wrapper {
+    overflow: hidden;
+}
+
+.single-product-wrap {
+    overflow: hidden;
+    text-align: center;
+    z-index: 1;
+}
+
+.single-product-wrap .product-thumbnail {
+    box-shadow: 0 0 5px 5px #111111;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-product-wrap .product-thumbnail a img {
+    -webkit-transition: 0.3s  ease-out;
+    -moz-transition: 0.3s  ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s  ease-out;
+    width: 100%;
+    z-index: 1;
+}
+
+.single-product-wrap .product-thumbnail a img.secondary-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.single-product-wrap .product-thumbnail .product-hvr-content>.btn-addToCart {
+    font-size: 1.3rem;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    line-height: 1;
+    width: 100%;
+    -webkit-transition: 0.3s 0.2s ease-out;
+    -moz-transition: 0.3s 0.2s ease-out;
+    -o-transition: 0.3s 0.2s ease-out;
+    transition: 0.3s 0.2s ease-out;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@media only screen and (max-width: 767.98px) {
+    .single-product-wrap .product-thumbnail .product-hvr-content>.btn-addToCart {
+        padding: 13px 10px;
+    }
+}
+
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group {
+    position: absolute;
+    bottom: 80px;
+    right: 30px;
+    z-index: 3;
+}
+
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group a,
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group span {
+    background-color: #fff;
+    color: #262626;
+    font-size: 1.8rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    line-height: 50px;
+    margin-bottom: 10px;
+    padding: 0;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    -webkit-transition: 0.4s 0.2s ease-out;
+    -moz-transition: 0.4s 0.2s ease-out;
+    -o-transition: 0.4s 0.2s ease-out;
+    transition: 0.4s 0.2s ease-out;
+    -webkit-transform: translate(50px, 0);
+    -moz-transform: translate(50px, 0);
+    -ms-transform: translate(50px, 0);
+    transform: translate(50px, 0);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    visibility: hidden;
+}
+
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group a:hover,
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group span:hover {
+    background-color: #d25b5b;
+    color: #fff;
+    transition-delay: 0.1s !important;
+}
+
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group a:hover button,
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group span:hover button {
+    color: #fff;
+}
+
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group a:last-child,
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group span:last-child {
+    margin-bottom: 0;
+}
+
+.single-product-wrap .product-thumbnail .product-hvr-content .prod-btn-group button {
+    display: inline-block;
+    width: 100%;
+}
+
+.single-product-wrap .product-details {
+    margin-top: 23px;
+}
+
+.single-product-wrap .product-details .product-name {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.single-product-wrap .product-details .product-name a {
+    color: white;
+}
+
+.single-product-wrap .product-details .product-name a:hover {
+    color: #1f89b9;
+}
+
+.single-product-wrap .product-details .product-prices {
+    color: #1f89b9;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.single-product-wrap .product-details .product-prices del {
+    color: #8d8d8d;
+    margin-right: 5px;
+}
+
+.single-product-wrap .product-details .product-desc {
+    color: #8d8d8d;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+    margin-bottom: 30px;
+    font-family: "intro-book";
+    @media (max-width: $mobile) {
+        margin-bottom: 15px;
+    }
+}
+
+.single-product-wrap .product-details .list-view-content {
+    display: none;
+}
+
+.single-product-wrap .product-details .list-view-content .btn {
+    padding: 15px 45px;
+}
+
+.single-product-wrap .product-details .list-view-content a {
+    margin-right: 20px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.single-product-wrap .product-details .list-view-content a i {
+    color: #262626;
+    font-size: 2rem;
+}
+
+.single-product-wrap .product-details .list-view-content a i:hover {
+    color: #d25b5b;
+}
+
+.single-product-wrap .product-badge {
+    background-color: #262626;
+    color: #fff;
+    padding: 15px 12px;
+    font-size: 1.2rem;
+
+    line-height: 1;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 85px;
+    -webkit-transition: 0.4s 0.2s ease-out;
+    -moz-transition: 0.4s 0.2s ease-out;
+    -o-transition: 0.4s 0.2s ease-out;
+    transition: 0.4s 0.2s ease-out;
+    @media (max-width: $mobile) {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+    @media (max-width: $mobileSmall) {
+        padding: 15px 12px;
+    font-size: 1.2rem;
+    }
+}
+
+.single-product-wrap .product-badge.sale {
+    background-color: #79bf56;
+}
+
+.single-product-wrap .product-badge.hot {
+    background-color: #1f89b9;;
+}
+
+.single-product-wrap:hover .product-thumbnail a img.primary-thumb {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.single-product-wrap:hover .product-thumbnail a img.secondary-thumb {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    visibility: visible;
+    pointer-events: visible;
+}
+
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .btn-addToCart {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    visibility: visible;
+    pointer-events: visible;
+}
+
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group a,
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group span {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    visibility: visible;
+}
+
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group a:nth-child(2),
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group span:nth-child(2) {
+    transition-delay: 0.45s;
+}
+
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group a:nth-child(3),
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group span:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group a:nth-child(4),
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .prod-btn-group span:nth-child(4) {
+    transition-delay: 0.55s;
+}
+
+.single-product-wrap:hover .product-thumbnail .product-hvr-content .product-badge {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    visibility: hidden;
+}
+.products-on-column {
+    margin-top: -30px; 
+}
+    .products-on-column .single-product-wrap {
+      margin-top: 30px; 
+      
+    }
+    .products-on-column.list-view .single-product-wrap {
+        @media (max-width: $mobile) {
+            margin-top: 50px;
+        }
+      }

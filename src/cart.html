@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Корзина"
+})
+
+<body>
+    <div id="preloader_malc">
+        <div class="preload">
+            <div class="loader-11">
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <div class="page__cart " id="cart">
+                <section class="second-header">
+                    <div class="second-header__container">
+                        <h1 class="second-header__title ">Корзина</h1>
+                        <nav class="page-breadcrumb">
+                            <ul class="breadcrumbs">
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="catalog.html" >Каталог</a></li>
+                                <li><a href="" class="active">Корзина</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <div id="cart-page-wrapper" class="cart-page-wrapper">
+                    <div class="cart__container">
+                        <div class="cart__block">
+                            <div class="cart__left-block">
+                                <div class="shopping-cart-list-area">
+                                    <div class="shopping-cart-table table-responsive">
+                                        <table class="table table-bordered text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th>Товары</th>
+                                                    <th>Цена</th>
+                                                    <th>Количество</th>
+                                                    <th>Итого</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td class="product-list">
+                                                        <div class="cart-product-item">
+                                                            <div class="remove-icon">
+                                                                <button>x</button>
+                                                            </div>
+                                                            <a href="single-product-sticky.html" class="product-thumb">
+                                                                <img src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Product"/>
+                                                            </a>
+                                                            <a href="single-product-tab-left.html" class="product-name">Какой-то товар</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">2990 ₽</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button type="button" class="quantity__button quantity__button_minus"></button>
+                                                            <div class="quantity__input">
+                                                                <input autocomplete="off" type="text" name="form[]" value="1">
+                                                            </div>
+                                                            <button type="button" class="quantity__button quantity__button_plus"></button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">2990 ₽</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-list">
+                                                        <div class="cart-product-item">
+                                                            <div class="remove-icon">
+                                                                <button>x</button>
+                                                            </div>
+                                                            <a href="single-product-sticky.html" class="product-thumb">
+                                                                <img src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Product"/>
+                                                            </a>
+                                                            <a href="single-product-tab-left.html" class="product-name">Какой-то товар</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">2990 ₽</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button type="button" class="quantity__button quantity__button_minus"></button>
+                                                            <div class="quantity__input">
+                                                                <input autocomplete="off" type="text" name="form[]" value="1">
+                                                            </div>
+                                                            <button type="button" class="quantity__button quantity__button_plus"></button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">2990 ₽</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="product-list">
+                                                        <div class="cart-product-item">
+                                                            <div class="remove-icon">
+                                                                <button>x</button>
+                                                            </div>
+                                                            <a href="single-product-sticky.html" class="product-thumb">
+                                                                <img src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Product"/>
+                                                            </a>
+                                                            <a href="single-product-tab-left.html" class="product-name">Какой-то товар</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">2990 ₽</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <button type="button" class="quantity__button quantity__button_minus"></button>
+                                                            <div class="quantity__input">
+                                                                <input autocomplete="off" type="text" name="form[]" value="1">
+                                                            </div>
+                                                            <button type="button" class="quantity__button quantity__button_plus"></button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">2990 ₽</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="cart-coupon-update-area">
+                                        <div class="coupon-form-wrap">
+                                            <form action="#" method="post">
+                                                <input type="text" placeholder="Код купона"/>
+                                                <button class="btn-apply">Применить купон</button>
+                                            </form>
+                                        </div>
+                
+                                        <div class="cart-update-buttons">
+                                            <button class="btn-update-cart">Обновить корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__right-block">
+                                <div class="cart-calculate-area">
+                                    <h5 class="cal-title">Сумма заказов</h5>
+                
+                                    <div class="cart-cal-table table-responsive">
+                                        <table class="table table-borderless">
+                                            <tr class="cart-sub-total">
+                                                <th>Подытог</th>
+                                                <td>8970 ₽</td>
+                                            </tr>
+                                            <tr class="shipping">
+                                                <th>Доставка</th>
+                                                <td>
+                                                    <ul class="shipping-method">
+                                                        <li>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="no_shipping" name="shipping_method" class="custom-control-input"  />
+                                                                <label class="custom-control-label" for="no_shipping">Самовывоз</label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" id="courier_method" name="shipping_method" class="custom-control-input" checked />
+                                                                <label class="custom-control-label" for="courier_method">Курьером : 500₽</label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="order-total">
+                                                <th>Итого</th>
+                                                <td><b>9470 ₽</b></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                
+                                    <div class="proceed-checkout-btn">
+                                        <a href="checkout.html" class="btn btn-full btn-black">Оформить заказ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+
+    @@include('html/_popup-card.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

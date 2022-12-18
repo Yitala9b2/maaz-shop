@@ -7,36 +7,27 @@ import * as noUiSlider from 'nouislider';
 // Подключение cтилей из node_modules
 // import 'nouislider/dist/nouislider.css';
 
+
+// слайдер для цены
 export function rangeInit() {
-	const priceSlider = document.querySelector('#range');
+	const priceSlider = document.querySelector('.price-range');
 	if (priceSlider) {
-		let textFrom = priceSlider.getAttribute('data-from');
-		let textTo = priceSlider.getAttribute('data-to');
+        let amount = document.getElementById("amount");
+		let minPrice = parseFloat(priceSlider.getAttribute('data-min'));
+		let maxPrice = parseFloat(priceSlider.getAttribute('data-max'));
 		noUiSlider.create(priceSlider, {
-			start: 0, // [0,200000]
-			connect: [true, false],
+			start:  [minPrice,maxPrice],
+			connect: true,
+            step: 100,
 			range: {
-				'min': [0],
-				'max': [200000]
-			}
+				'min': minPrice,
+				'max': maxPrice
+			},
 		});
-		/*
-		const priceStart = document.getElementById('price-start');
-		const priceEnd = document.getElementById('price-end');
-		priceStart.addEventListener('change', setPriceValues);
-		priceEnd.addEventListener('change', setPriceValues);
-		*/
-		function setPriceValues() {
-			let priceStartValue;
-			let priceEndValue;
-			if (priceStart.value != '') {
-				priceStartValue = priceStart.value;
-			}
-			if (priceEnd.value != '') {
-				priceEndValue = priceEnd.value;
-			}
-			priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
-		}
+        priceSlider.noUiSlider.on("update", function(values, handle){
+            amount.value =" " + Math.round(values[0]) +
+            " ₽ - " + Math.round(values[1]) + " ₽"
+        });
 	}
 }
 rangeInit();

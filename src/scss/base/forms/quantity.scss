@@ -1,13 +1,14 @@
 //<QUANTITY>
 // Снипет (HTML): qa
-.quantity {
-	width: 88px;
-	height: 40px;
+.quantity-btn-group .quantity, .quantity  {
+    margin-right: 10px;
+	width: 150px;
+	height: 65px;
 	display: flex;
-	border: 1px solid rgba(166, 166, 166, 0.45);
+	border: 1px solid #dddddd5d;
 	// .quantity__button
 	&__button {
-		flex: 0 0 30px;
+		flex: 0 0 50px;
 		position: relative;
 		cursor: pointer;
 		&::before,
@@ -26,7 +27,7 @@
 			&:hover {
 				&::before,
 				&::after {
-					background-color: rgba(0, 0, 0, 0.5);
+					background-color: white;
 				}
 			}
 		}
@@ -44,11 +45,22 @@
 	&__input {
 		flex: 1 1 auto;
 		input {
+            &:focus-visible{
+                outline: none;
+            }
 			height: 100%;
-			color: #a6a6a6;
-			font-size: 12px;
+			color: black;
+			font-size: 20px;
 			width: 100%;
 			text-align: center;
 		}
 	}
+}
+.quantity{
+    margin-right: 0;
+    width: 150px;
+	height: 50px;
+    & .quantity__input input{
+        
+    }
 }

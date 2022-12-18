@@ -61,36 +61,80 @@
                 <div class="swiper-pagination"></div>
                 <!-- Если нужна навигация (влево/вправо) -->
             </div>
-            <section class="page__catalog catalog" id="catalog">
-                <div class="catalog__container">
-                    <h2 class="catalog__title title">Каталог</h2>
-                    <div class="catalog__block">
-                        <div class="catalog__filters filters">
-                            <div class="filters__body">
-                                <div class="filters__filter"></div>
-                            </div>
-                        </div>
-                        <div class="catalog__carts-pagination">
+            <section class="page__popular popular">
+                <div class="popular__container">
+                    <h2 class="popular__title title">Популярные товары</h2>
+                    <div class="products-wrapper products-on-column">
+
                         <div class="catalog__carts">
-                            <div class="carts__cart cart">
-                                <div class="cart__image"><img src = "@img/clothes-image/clothes1.jpeg" alt=""></div>
-                                <div class="cart__name">Пиджак</div>
-                                <div class="cart__price">2000</div>
+                            <div class="cart">
+                                <div class="single-product-wrap">
+                                    <figure class="product-thumbnail">
+                                        <a href="single-product.html" class="d-block">
+                                            <img class="primary-thumb" src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Product">
+                                            <img class="secondary-thumb" src="@img/carts/blackHoodie/blackHoodie2.jpg" alt="Product">
+                                        </a>
+                                        <figcaption class="product-hvr-content">
+                                            <a href="#" class="btn btn-black btn-addToCart">Добавить в корзину</a>
+                                            <span class="product-badge hot">Хит продаж</span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="product-details">
+                                        <h2 class="product-name"><a href="single-product.html">Название товара</a></h2>
+                                        <div class="product-prices">
+                                            <del class="oldPrice">5000 ₽</del>
+                                            <span class="price">4000 ₽</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="carts__cart cart">
-                                <div class="cart__image"><img src = "@img/clothes-image/clothes1.jpeg" alt=""></div>
-                                <div class="cart__name">Юбка</div>
-                                <div class="cart__price">2000</div>
+                            <div class="cart">
+                                <div class="single-product-wrap">
+                                    <figure class="product-thumbnail">
+                                        <a href="single-product.html" class="d-block">
+                                            <img class="primary-thumb" src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Product">
+                                            <img class="secondary-thumb" src="@img/carts/blackHoodie/blackHoodie2.jpg" alt="Product">
+                                        </a>
+                                        <figcaption class="product-hvr-content">
+                                            <a href="#" class="btn btn-black btn-addToCart">Добавить в корзину</a>
+                                            <span class="product-badge hot">Хит продаж</span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="product-details">
+                                        <h2 class="product-name"><a href="single-product.html">Название товара</a></h2>
+                                        <div class="product-prices">
+                                            <del class="oldPrice">5000 ₽</del>
+                                            <span class="price">4000 ₽</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart">
+                                <div class="single-product-wrap">
+                                    <figure class="product-thumbnail">
+                                        <a href="single-product.html" class="d-block">
+                                            <img class="primary-thumb" src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Product">
+                                            <img class="secondary-thumb" src="@img/carts/blackHoodie/blackHoodie2.jpg" alt="Product">
+                                        </a>
+                                        <figcaption class="product-hvr-content">
+                                            <a href="#" class="btn btn-black btn-addToCart">Добавить в корзину</a>
+                                            <span class="product-badge hot">Хит продаж</span>
+                                        </figcaption>
+                                    </figure>
+                                    <div class="product-details">
+                                        <h2 class="product-name"><a href="single-product.html">Название товара</a></h2>
+                                        <div class="product-prices">
+                                            <del class="oldPrice">5000 ₽</del>
+                                            <span class="price">4000 ₽</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <nav class="navigation pagination" role="navigation">
-                            <div class="nav-links">
-                                <span aria-current="page" class="page-numbers current">1</span>
-                                <a href="" class="page-numbers">2</a>
-                                <a href="" class="next page-numbers">далее</a>
-                            </div>
-                        </nav>
-                        </div>
+                    </div>
+                    <div class="popular__catalog">
+                        <div class="catalog__link">
+                        <a href="catalog.html">Перейти в каталог</a></div>
                     </div>
                 </div>
             </section>
@@ -118,7 +162,7 @@
             </section>
             <section class="page__shop shop">
                 <div class="shop__container">
-                    <div class="shop__title title">Наш магазин и производство</div>
+                    <div class="shop__title title">Наша школа и производство</div>
                     <div class="shop__block">
                         <div class="shop__magazine">
                             <img src="@img/work.jpg" alt="школа">
@@ -141,11 +185,23 @@
                     </div>
                 </div>
             </section>
+            <div class="dws">
+                <span class="cart-count">6</span>
+                <div class="pulse"><a href="#" data-popup="#popupCard">
+                        <div class="bloc"></div>
+                        <div class="card">
+                            <img src="@img/svg/Shopping_Cart.svg" alt="">
+                        </div>
+                        <div class="text">Корзина</div>
+                    </a>
+                </div>
+                
+            </div>
         </main>
         @@include('html/_footer.htm',{})
     </div>
 
-    @@include('html/_popup.htm',{})
+    @@include('html/_popup-card.htm',{})
     @@include('html/_js.htm',{})
 </body>
 

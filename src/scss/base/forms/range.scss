@@ -85,7 +85,7 @@
 .noUi-horizontal .noUi-handle {
 	width: 34px;
 	height: 28px;
-	right: -17px;
+	right: -15px;
 	top: -6px;
 }
 .noUi-vertical {
@@ -106,15 +106,15 @@
  */
 .noUi-target {
 	background: #fafafa;
-	border-radius: 4px;
-	border: 1px solid #d3d3d3;
+	
+	
 	box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbb;
 }
 .noUi-connects {
 	border-radius: 3px;
 }
 .noUi-connect {
-	background: #3fb8af;
+	background: $brand;
 }
 /* Handles and cursors;
  */
@@ -290,4 +290,39 @@
 	transform: translate(0, -18px);
 	top: auto;
 	right: 28px;
+}
+/////////////////////ДОПОЛНЕНИЕ/////////////////
+#amount {
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.74);
+    &:focus-visible{
+        outline: none;
+    }
+}
+.noUi-horizontal{
+    height: 5px;
+    width: 95%;
+}
+.noUi-handle::after,
+.noUi-handle::before
+{
+    display: none;
+}
+
+.noUi-handle{
+    cursor: pointer;
+    box-shadow: none;
+    border-radius: 100%;
+    background-color: white;
+    border:4px solid $brand;
+}
+
+.noUi-horizontal .noUi-handle{
+    top: -8px;
+    width: 20px;
+    height: 20px;
+}
+.range-slider{
+    padding-top: 30px;
 }

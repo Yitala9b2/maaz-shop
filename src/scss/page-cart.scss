@@ -1,0 +1,272 @@
+// основные стили корзины
+.cart{
+    &__block{
+        display: flex;
+        padding: 100px 0;
+        color: white;
+        @media (max-width: $tablet) {
+        flex-wrap: wrap;
+        padding: 50px 0;
+        }
+
+    }
+    &__left-block{
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+        @media (max-width: $tablet) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            }
+    }
+    &__right-block{
+        padding-left: 30px;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        @media (max-width: $tablet) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 50px 10vw 0 10vw ;
+            }
+        @media (max-width: $mobileSmall) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 50px 0 0 0 ;
+            }
+    }
+}
+
+// таблица корзины
+.table-responsive{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+.table-responsive::-webkit-scrollbar-thumb, .list::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    border: 0;
+    background-color: $brand; }
+  
+  .table-responsive::-webkit-scrollbar, .list::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 5px;
+    background-color: #1f88b962; }
+
+    .table-responsive>.table-bordered {
+        border: 0;
+    }
+    .table-bordered td, .table-bordered th {
+        border: 1px solid #dee2e68a;
+    }
+
+.table{
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    text-align: center;
+    border-collapse: collapse;
+}
+.shopping-cart-table thead th {
+    font-weight: 400;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    border-bottom: 0; }
+    .table td, .table th {
+        padding: 0.75rem;
+        
+        border-top: 1px solid #dee2e69f;
+    }
+
+    .shopping-cart-table tr td, .shopping-cart-table tr th {
+        vertical-align: middle;
+        width: 15%;
+        padding: 10px;
+        border-color: rgba(238, 238, 238, 0.589);
+        white-space: nowrap; }
+        .shopping-cart-table tr td.product-list, .shopping-cart-table tr th.product-list {
+          width: 55%; }
+          .shopping-cart-table tbody tr{
+            font-family: "intro-book";
+          }
+
+          .cart-product-item{
+            display: flex;
+            align-items: center
+          }
+
+          .shopping-cart-table .product-list .product-thumb {
+            display: block;
+            width: 70px;
+            margin-right: 20px; 
+        img{
+            max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+        }
+        }
+        .remove-icon{
+            padding: 0 20px 0 10px;
+            font-size: 25px;
+            text-align: start;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            & button{
+                font-family: "intro-book";
+                text-align: end;
+                &:hover{
+                    color: #d25b5b;
+                    transition: all 0.3s ease 0s;
+                }
+            }
+            
+        }
+        .cart-product-item .product-name{
+            font-size: 1.2rem;
+            margin-bottom:0;
+            &:hover{
+                transition: all 0.3s ease 0s;
+                color: $brand;
+            }
+            @media (max-width: $mobile) {
+                font-size: 0.9rem;
+            }
+        }
+
+
+
+//купоны
+.cart-coupon-update-area{
+    margin-top: 20px;
+    @media (min-width: 550px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    }
+}
+.coupon-form-wrap form input{
+background-color: transparent;
+color: white;
+padding-bottom: 5px;
+border-bottom: 1px solid white;
+@media (max-width: 550px) {
+flex: 1 1 auto;
+}
+}
+.cart-coupon-update-area .coupon-form-wrap form input:focus {
+    border-color: $brand; 
+transition: all 0.3s ease 0s;}
+.coupon-form-wrap form {
+    display: flex;
+    align-items: center;
+   
+}
+.btn-apply{
+    padding-left: 20px;
+    padding-bottom: 5px;
+border-bottom: 1px solid white;
+@media (max-width: 550px) {
+    padding-left: 0;
+}
+ &:hover{
+    color: $brand;
+    transition: all 0.3s ease 0s;
+}
+
+}
+.cart-coupon-update-area .coupon-form-wrap form input:focus + .btn-apply{
+    border-color: $brand;
+    transition: all 0.3s ease 0s;
+}
+.cart-update-buttons{
+    font-size: 20px;
+    @media (max-width: 550px) {
+        padding-top: 20px;
+        }
+    &:hover{
+        color: $brand;
+        transition: all 0.3s ease 0s;
+        
+    }
+}
+
+// итоговая область
+.cart-calculate-area .proceed-checkout-btn {
+    margin: 15px -30px 0;}
+
+.proceed-checkout-btn .btn {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.cart-calculate-area{
+    background-color: #282e2e;
+    padding: 30px 30px 0;
+    
+}
+.cal-title{
+    padding: 0 0 20px 0;
+    font-size: 1rem;
+}
+.table-borderless tbody tr td, .table-borderless tbody tr th{
+    border-top: none;
+    padding: 15px 0 15px 0;
+    text-align: left;
+    font-weight: 400;
+    font-family: "intro-book";
+}
+.table-borderless .order-total th ,.table-borderless .order-total td {
+    border-top: 1px solid #dee2e69f;
+    padding: 15px 0;
+}
+.table-borderless .order-total td b{
+    font-family: "intro-bold";
+}
+
+.shipping-method :not(:last-child){
+padding-bottom: 10px;
+}
+
+.custom-control-input {
+    
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+
+    &+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: #b6b6b6;
+    }
+
+
+    &+label::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #909090;
+        margin-right: 0.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+        cursor: pointer;
+    }
+
+    &:checked+label::before {
+        border-color: white;
+        background-color: white;
+        background-image: url('@img/Vector.svg');
+    }
+
+}

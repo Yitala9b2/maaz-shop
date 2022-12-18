@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div id="preloader_malc">
+        <div class="preload">
+            <div class="loader-11">
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <div class="page__single single" id="single">
+                <section class="second-header">
+                    <div class="second-header__container">
+                        <h1 class="second-header__title ">Название товара</h1>
+                        <nav class="page-breadcrumb">
+                            <ul class="breadcrumbs">
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="catalog.html" >Каталог</a></li>
+                                <li><a href="" class="active">Название товара</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <div id="single-product-page" class="single-product-page">
+                    <div class="single__container">
+                        <div class="single__block">
+                            <!-- single slider -->
+                            <div class="single__slider">
+                            <div class="single-product-thumb-wrap tab-style-left">
+                                <div class="product-thumb-large-view">
+                                    <div class="product-thumb-carousel vertical-tab ">
+                                        <div class="product-thumb-carousel__wrapper swiper-wrapper">
+                                        <div class="swiper-slide">
+                                        <figure class="product-thumb-item swiper-zoom-container">
+                                            <img src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Single Product1"/>
+                                        </figure>
+                                        </div>
+                                        <div class="swiper-slide">
+                                        <figure class="product-thumb-item swiper-zoom-container">
+                                            <img src="@img/carts/blackHoodie/blackHoodie2.jpg" alt="Single Product2"/>
+                                        </figure>
+                                        </div>
+                                        <div class="swiper-slide">
+                                        <figure class="product-thumb-item swiper-zoom-container">
+                                            <img src="@img/carts/blackHoodie/blackHoodie3.jpg" alt="Single Product3"/>
+                                        </figure>
+                                        </div>
+                                        <div class="swiper-slide">
+                                        <figure class="product-thumb-item swiper-zoom-container">
+                                            <img src="@img/carts/blackHoodie/blackHoodie4.jpg" alt="Single Product3"/>
+                                        </figure>
+                                        </div>
+                                        </div>
+                                    </div>
+            
+                                </div>
+                                <div thumbsSlider="" class="vertical-tab-nav ">
+                                    <div class="vertical-tab-nav__wrapper swiper-wrapper">
+                                        <div class="swiper-slide">
+                                    <figure class="product-thumb-item ">
+                                        <img src="@img/carts/blackHoodie/blackHoodie1.jpg" alt="Single Product1"/>
+                                    </figure>
+                                    </div>
+                                    <div class="swiper-slide">
+                                    <figure class="product-thumb-item ">
+                                        <img src="@img/carts/blackHoodie/blackHoodie2.jpg" alt="Single Product2"/>
+                                    </figure>
+                                    </div>
+                                    <div class="swiper-slide">
+                                    <figure class="product-thumb-item ">
+                                        <img src="@img/carts/blackHoodie/blackHoodie3.jpg" alt="Single Product3"/>
+                                    </figure>
+                                    </div>
+                                    <div class="swiper-slide">
+                                    <figure class="product-thumb-item ">
+                                        <img src="@img/carts/blackHoodie/blackHoodie4.jpg" alt="Single Product4"/>
+                                    </figure>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="single__content">
+
+                                <div class="single-product-content-wrapper">
+                                    <div class="single-product-details">
+                                        <h2 class="product-name">Название товара</h2>
+                                        <div class="prices-stock-status">
+                                            <div class="prices-group">
+                                                <del class="old-price">5000 ₽</del>
+                                                <span class="price">4000 ₽</span>
+                                            </div>
+                                            <span class="stock-status"><i class="dl-icon-check-circle1"></i> В наличии</span>
+                                        </div>
+                                        <p class="product-desc">Ut enim added minim veniam, quis nostrud exercitation ullamco ommodo
+                                            consequat. Duis aute irure dolor in reprehenderit dolore eu fugiat nulla pariatur. Excepteur
+                                            sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit. Ab dolorem eum labore minima possimus quaerat quod recusandae repellat sequi ut.</p>
+                
+                                        <div class="prod-configurable-content ">
+                                            <div class="configurable-item">
+                                                <h5 class="configurable-name">Размер: <b>L</b></h5>
+                                                <ul class="configurable-list nav">
+                                                    <li data-toggle="tooltip" data-placement="top" title="Small"><span>S</span></li>
+                                                    <li data-toggle="tooltip" data-placement="top" title="Medium"><span>M</span></li>
+                                                    <li class="active" data-toggle="tooltip" data-placement="top" title="Large"><span>L</span></li>
+                                                    <li data-toggle="tooltip" data-placement="top" title="Extra Large"><span>XL</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                
+                                        <div class="quantity-btn-group">
+                                            <div class="quantity">
+                                                <button type="button" class="quantity__button quantity__button_minus"></button>
+                                                <div class="quantity__input">
+                                                    <input autocomplete="off" type="text" name="form[]" value="1">
+                                                </div>
+                                                <button type="button" class="quantity__button quantity__button_plus"></button>
+                                            </div>
+                                            <div class="list-btn-group">
+                                                <a href="cart.html" class="btn btn-black white-bg">Добавить в корзину</a>
+                                            </div>
+                                        </div>
+                
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="see-also">
+                <div class="see-also__container">
+                    <div class="see-also__title title">Смотрите также</div>
+                    <div class="products-wrapper products-on-column">
+
+						<div class="catalog__carts">
+							<div class="cart">
+								<div class="single-product-wrap">
+									<figure class="product-thumbnail">
+										<a href="single-product.html" class="d-block">
+											<img class="primary-thumb" src="img/carts/blackHoodie/blackHoodie1.jpg" alt="Product">
+											<img class="secondary-thumb" src="img/carts/blackHoodie/blackHoodie2.jpg" alt="Product">
+										</a>
+										<figcaption class="product-hvr-content">
+											<a href="#" class="btn btn-black btn-addToCart">Добавить в корзину</a>
+											<span class="product-badge hot">Хит продаж</span>
+										</figcaption>
+									</figure>
+									<div class="product-details">
+										<h2 class="product-name"><a href="single-product.html">Название товара</a></h2>
+										<div class="product-prices">
+											<del class="oldPrice">5000 ₽</del>
+											<span class="price">4000 ₽</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cart">
+								<div class="single-product-wrap">
+									<figure class="product-thumbnail">
+										<a href="single-product.html" class="d-block">
+											<img class="primary-thumb" src="img/carts/blackHoodie/blackHoodie1.jpg" alt="Product">
+											<img class="secondary-thumb" src="img/carts/blackHoodie/blackHoodie2.jpg" alt="Product">
+										</a>
+										<figcaption class="product-hvr-content">
+											<a href="#" class="btn btn-black btn-addToCart">Добавить в корзину</a>
+											<span class="product-badge hot">Хит продаж</span>
+										</figcaption>
+									</figure>
+									<div class="product-details">
+										<h2 class="product-name"><a href="single-product.html">Название товара</a></h2>
+										<div class="product-prices">
+											<del class="oldPrice">5000 ₽</del>
+											<span class="price">4000 ₽</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cart">
+								<div class="single-product-wrap">
+									<figure class="product-thumbnail">
+										<a href="single-product.html" class="d-block">
+											<img class="primary-thumb" src="img/carts/blackHoodie/blackHoodie1.jpg" alt="Product">
+											<img class="secondary-thumb" src="img/carts/blackHoodie/blackHoodie2.jpg" alt="Product">
+										</a>
+										<figcaption class="product-hvr-content">
+											<a href="#" class="btn btn-black btn-addToCart">Добавить в корзину</a>
+											<span class="product-badge hot">Хит продаж</span>
+										</figcaption>
+									</figure>
+									<div class="product-details">
+										<h2 class="product-name"><a href="single-product.html">Название товара</a></h2>
+										<div class="product-prices">
+											<del class="oldPrice">5000 ₽</del>
+											<span class="price">4000 ₽</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </section>
+            <div class="dws">
+                <span class="cart-count">6</span>
+                <div class="pulse"><a href="#" data-popup="#popupCard">
+                        <div class="bloc"></div>
+                        <div class="card">
+                            <img src="@img/svg/Shopping_Cart.svg" alt="">
+                        </div>
+                        <div class="text">Корзина</div>
+                    </a>
+                </div>
+                
+            </div>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+
+    @@include('html/_popup-card.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

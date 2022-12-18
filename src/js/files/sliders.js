@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, Thumbs, Zoom, EffectFade } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -39,73 +39,76 @@ function initSliders() {
 			spaceBetween: 0,
 			autoHeight: true,
 			speed: 1500,
-
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
-
-			
-			// Эффекты
-			//effect: 'fade',
-			//autoplay: {
-			//	delay: 4000,
-			//	disableOnInteraction: true,
-			//},
-			
-
-			// Пагинация
-			
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
 			},
-			
-
-			// Скроллбар
-			/*
-			scrollbar: {
-				el: '.swiper-scrollbar',
-				draggable: true,
-			},
-			*/
-
-			// Кнопки "влево/вправо"
 			navigation: {
 				prevEl: '.swiper-button-prev',
 				nextEl: '.swiper-button-next',
 			},
-
-			// Брейкпоинты
-			/*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-			// События
-			on: {
-
-			}
 		});
-	}
+	};
+     // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		let swiperSingle = new Swiper('.vertical-tab-nav', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+            modules: [Thumbs,Zoom,Navigation],
+			slidesPerView: 3,
+			spaceBetween: 10,
+			speed: 1500,
+            freeMode: true,
+            watchSlidesProgress: true,
+            direction: "vertical",
+		});
+        
+	 // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		let productThumbCarousel = new Swiper('.product-thumb-carousel', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+            modules: [Thumbs,Zoom],
+            zoom:true,
+			slidesPerView: 1,
+			spaceBetween: 10,
+			speed: 800,
+            
+            thumbs: {
+                swiper: swiperSingle,
+                },
+		});
+        
+	
+
 }
+
+//let images = document.querySelectorAll('.vertical-tab .swiper-zoom-container');
+//        console.log(images)
+//        images.forEach(image =>{
+//            let imageSlide = image.querySelector("img")
+//            let magnfying_area = imageSlide.parentNode
+//            console.log(magnfying_area)
+            
+//            magnfying_area.addEventListener("mousemove", function(event) {
+
+//                let clientX = event.clientX - magnfying_area.offsetLeft
+//                let clientY = event.clientY - magnfying_area.offsetTop
+
+//                let mWidth = magnfying_area.offsetWidth
+//                let mHeight = magnfying_area.offsetHeight
+                
+//                clientX = clientX / mWidth *100
+//                clientY = clientY / mHeight *100
+//                console.log(clientY)
+//                console.log(clientX)
+//                imageSlide.style.transform = 'translate(-'+clientX + '%,-'+clientY+'%) scale(2)'
+                
+//                })
+//                magnfying_area.addEventListener("mouseleave", function() {
+//                    imageSlide.style.transform = 'translate(-50%,-50%) scale(1)'
+//                  })
+//        })
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
@@ -136,8 +139,10 @@ function initSlidersScroll() {
 }
 
 window.addEventListener("load", function (e) {
-	// Запуск инициализации слайдеров
+	
 	initSliders();
+    
+    
 	// Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
 	//initSlidersScroll();
 });

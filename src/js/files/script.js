@@ -45,111 +45,54 @@ window.onload = function() {
   }}
 
 
-  //=========================ПОДКЛЮЧЕНИЕ ISOTOPE.JS========================
+ 
 
-    let elem = document.querySelector('.grid');
-    if (elem) {
-        var iso = new Isotope(elem, {
-            // options
-            itemSelector: '.isotope-cart',
-            layoutMode: 'masonry',
-            //  masonry:{
-            //    columnWidth: '.grid-sizer'
-            //  }
-             sortAscending: {
-                desс:false,
-                asc:false,
-                
-                  },
-            getSortData:{
+//остановка корзины над футером
+var dws = document.querySelector('.dws');
+var footer = document.querySelector('.footer');
+if (dws && footer) {
+    function checkOffset() {
+        function getRectTop(el) {
+            //находим координату верха элемента по y
+            var rect = el.getBoundingClientRect();
+            return rect.top;
+        }
+        // (если координата верха(от блока до верха браузера) + количество прокрученных пикселей) + высота элемента >= (координата футера + количество прокрученных пикселей)
+        if ((getRectTop(dws) + document.body.scrollTop) + dws.offsetHeight >= (getRectTop(footer) + document.body.scrollTop))
+        dws.style.position = 'absolute';
+        if (document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
+        dws.style.position = 'fixed'; // restore when you scroll up
 
 
-                  desc: function( itemElem ) {
-                  let desc = itemElem.querySelector('.desc').textContent;
-                  return parseFloat( desc.replace( /[\(\)]/g, '') );
-                },
+    }
 
-                asc: function( itemElem ) {
-                    let asc = itemElem.querySelector('.asc').textContent;
-                    return parseFloat( asc.replace( /[\(\)]/g, '') );
-                  },
-                
-                
-            },
-           
-        });
+    document.addEventListener("scroll", function () {
+        checkOffset();
+    });
+}
 
-//================СОРТИРОВКА======================
+// смена вида
+var viewItemClick = document.querySelector(".product-view-mode");
+let productWrapper = document.querySelector(".shop-page-products-wrapper .products-wrapper");
 
-        var sortByGroup = document.querySelector('.sort-by-button-group');
-        sortByGroup.addEventListener( 'click', function( event ) {
-          // only button clicks
-          if ( !matchesSelector( event.target, '.btn-sort' ) ) {
-            return;
-          }
-          var sortValue = event.target.getAttribute('data-sort-value');
-          iso.arrange({ sortBy: sortValue });
-          
-        });
-            let btnSort = sortByGroup.querySelectorAll('.btn-sort')
-            btnSort.forEach(Sort=>{Sort.addEventListener('click', function(){
-                if (Sort.classList.contains('is-checked')) {
-                    iso.updateSortData()
-                }
-                Sort.classList.toggle('is-checked')})
-            })
-//====================ФИЛЬТРА===========================
+if (viewItemClick && productWrapper) {
+    
 
-        let filters = {};
-
-        var filtersElem = document.querySelector('.isotope__filters');
-filtersElem.addEventListener( 'click', function( event ) {
-  // check for only button clicks
-  var isButton = event.target.classList.contains('iso__title');
-  if ( !isButton ) {
-    return;
-  }
-  var buttonGroup = fizzyUIUtils.getParent( event.target, '.button-group' );
-  var filterGroup = buttonGroup.getAttribute('data-filter-group');
-  // set filter for group
-  filters[ filterGroup ] = event.target.getAttribute('data-filter');
-  // combine filters
-  var filterValue = concatValues( filters );
-  // set filter for Isotope
-  iso.arrange({ filter: filterValue });
+    viewItemClick.addEventListener('click', function (event) {
+    let but = event.target.parentNode
+    console.log(but)
+    let productViewMode = document.querySelector('.product-view-mode');
+    if (productViewMode.querySelector('.active')) {
+        productViewMode.querySelector('.active').classList.remove('active')
+    }
+    but.classList.add('active')
+        var viewMode = but.getAttribute('data-viewmode');
+        if (productWrapper.classList.contains("grid-view")||productWrapper.classList.contains("list-view")) {
+            productWrapper.classList.remove("grid-view")
+            productWrapper.classList.remove("list-view")
+            productWrapper.classList.add(viewMode);
+        }
+        productWrapper.classList.add(viewMode);
+        
 });
-
-//================ДОБАВЛЕНИЕ КЛАССА КНОПКАМ ФИЛЬТРАЦИИ======================
-
-var buttonGroups = document.querySelectorAll('.button-group');
-for (var i = 0; i < buttonGroups.length; i++) {
-    var buttonGroup = buttonGroups[i];
-    var onButtonGroupClick = getOnButtonGroupClick( buttonGroup );
-    buttonGroup.addEventListener( 'click', onButtonGroupClick );
 }
-
-function getOnButtonGroupClick( buttonGroup ) {
-    return function( event ) {
-      // check for only button clicks
-      var isButton = event.target.classList.contains('iso__title');
-      if ( !isButton ) {
-        return;
-      }
-      
-      var checkedButton = buttonGroup.querySelector('.is-checked');
-      checkedButton.classList.remove('is-checked')
-      event.target.classList.add('is-checked');
-    }
-  }
-
-  function concatValues( obj ) {
-    var value = '';
-    for ( var prop in obj ) {
-      value += obj[ prop ];
-    }
-    return value;
-  }
-  
-}
-
-
