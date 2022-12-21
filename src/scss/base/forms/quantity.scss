@@ -1,6 +1,6 @@
 //<QUANTITY>
 // Снипет (HTML): qa
-.quantity-btn-group .quantity, .quantity  {
+.quantity-btn-group .quantity, .shopping-cart-list-area .quantity {
     margin-right: 10px;
 	width: 150px;
 	height: 65px;
@@ -56,7 +56,7 @@
 		}
 	}
 }
-.quantity{
+.shopping-cart-list-area .quantity{
     margin-right: 0;
     width: 150px;
 	height: 50px;

@@ -1,8 +1,19 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile } from "./functions.js";
+import { isMobile, menuClose } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
+import SmoothScroll from 'smooth-scroll';
+//==============================================================================================================================================================================================================================================================================================================================
 
+
+/// подключение плавной прокрутки
+var scroll = new SmoothScroll('.menu__item a[href*="#"]',{
+    header: '.header'
+});
+var  logScrollEvent = function (event) {
+    menuClose()
+}
+document.addEventListener('scrollStart', logScrollEvent, false);
 //============ПРЕЛОАДЕР================
 window.onload = function() {
     
@@ -80,7 +91,6 @@ if (viewItemClick && productWrapper) {
 
     viewItemClick.addEventListener('click', function (event) {
     let but = event.target.parentNode
-    console.log(but)
     let productViewMode = document.querySelector('.product-view-mode');
     if (productViewMode.querySelector('.active')) {
         productViewMode.querySelector('.active').classList.remove('active')
@@ -95,4 +105,13 @@ if (viewItemClick && productWrapper) {
         productWrapper.classList.add(viewMode);
         
 });
+}
+
+// прокручивать к блоку
+let contactsLink = document.querySelectorAll('#contacts-link');
+let contactsTitle = document.querySelector('.contacts__title');
+if (!contactsTitle) {
+    contactsLink.forEach(link => link.removeAttribute('data-goto'))
+    contactsLink.forEach(link => link.removeAttribute('data-goto-header'))
+
 }

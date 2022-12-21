@@ -4,7 +4,7 @@
         flex-wrap: wrap;
         padding: 100px 0;
         @media (max-width: $tablet) {
-            padding: 50px 0 100px;
+            padding: 50px 0 50px;
         }
     }
     &__slider{
@@ -62,11 +62,21 @@
 .quantity-btn-group{
     display: flex;
     align-items: center;
-    gap: 40px;
-
-    flex-wrap: wrap;
+    @media (max-width: 1060px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    @media (max-width: $mobile) {
+        flex-direction: row;
+    }
+    
     justify-content: space-between;
     margin-top: 50px;
+    @media (max-width: $mobileSmall) {
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: flex-start;
+    }
 }
 
 .single-product-details .configurable-item {
@@ -106,12 +116,35 @@
         line-height: 30px;
         display: block; }
 
-        .list-btn-group{
+        .single-product-details .list-btn-group{
             box-sizing: content-box;
         }
-        .white-bg{
-            background-color: white;
+        .single-product-details .quantity-btn-group .list-btn-group {
+            display: flex;
+            @media (max-width: 1060px) {
+                margin-top: 20px;
+            }
+            @media (max-width: $mobile) {
+                margin-top: 0;
+            }
+            @media (max-width: $mobileSmall) {
+            margin-top: 20px;
+            width: 100%;
+           }
+            & .btn{
+                background-color: white;
+                 width: 100%;
+                 color: black;
+                 &:hover{
+                    color: white;
+                background-color: $brand;
+            }
+            }
+           
+            
+            
         }
+
         .see-also{
             padding-bottom: 100px;
         }

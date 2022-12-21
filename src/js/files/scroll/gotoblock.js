@@ -2,8 +2,9 @@
 import { isMobile, menuClose, getHash, FLS } from "../functions.js";
 // Подключение дополнения для увеличения возможностей
 // Документация: https://github.com/cferdinandi/smooth-scroll
-// import SmoothScroll from 'smooth-scroll';
+//import SmoothScroll from 'smooth-scroll';
 //==============================================================================================================================================================================================================================================================================================================================
+
 
 // Модуль плавной проктутки к блоку
 export let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {

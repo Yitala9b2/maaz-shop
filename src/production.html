@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Производство"
+})
+
+<body>
+    <div id="preloader_malc">
+        <div class="preload">
+            <div class="loader-11">
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <div class="page__production production" id="production">
+                <section class="second-header">
+                    <div class="second-header__container">
+                        <h1 class="second-header__title ">Производство</h1>
+                        <nav class="page-breadcrumb">
+                            <ul class="breadcrumbs">
+                                <li><a href="index.html">Главная</a></li>
+                                <li><a href="" class="active">Производство</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <div class="production__container">
+                    <div class="production__block">
+    
+    
+    
+                    </div>
+                </div>
+
+            <div class="dws">
+                <span class="cart-count">3</span>
+                <div class="pulse"><a href="#" data-popup="#popupCard">
+                        <div class="bloc"></div>
+                        <div class="card">
+                            <img src="@img/svg/Shopping_Cart.svg" alt="">
+                        </div>
+                        <div class="text">Корзина</div>
+                    </a>
+                </div>
+                
+            </div>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+
+    @@include('html/_popup-card.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

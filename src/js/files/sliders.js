@@ -42,11 +42,9 @@ function initSliders() {
 			pagination: {
 				el: '.swiper-pagination',
 				clickable: true,
+                
 			},
-			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
-			},
+		
 		});
 	};
      // Указываем скласс нужного слайдера

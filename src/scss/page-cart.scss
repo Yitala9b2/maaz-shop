@@ -105,7 +105,7 @@
     border-style: none;
         }
         }
-        .remove-icon{
+        .shopping-cart-table .remove-icon{
             padding: 0 20px 0 10px;
             font-size: 25px;
             text-align: start;
@@ -200,9 +200,12 @@ border-bottom: 1px solid white;
     width: 100%;
     text-align: center;
     display: block;
+    &:hover{
+        background-color: $brand;
+    }
 }
 .cart-calculate-area{
-    background-color: #282e2e;
+    background-color: rgba(0,0,0,.7);
     padding: 30px 30px 0;
     
 }

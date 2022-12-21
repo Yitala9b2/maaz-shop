@@ -62,6 +62,7 @@ export function pageNavigation() {
 		let goToHash;
 		if (document.querySelector(`#${getHash()}`)) {
 			goToHash = `#${getHash()}`;
+            console.log(goToHash)
 		} else if (document.querySelector(`.${getHash()}`)) {
 			goToHash = `.${getHash()}`;
 		}

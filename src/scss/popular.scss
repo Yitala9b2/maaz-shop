@@ -45,21 +45,9 @@
     position: relative;
     background-color: white;
     &:hover{
-        background: rgba(0, 0, 0, 0.541);
+        background: $brand;
     color: white;
-    border-radius: 10px;
     transition: all 0.3s ease 0s;
-    &:hover ::after{
-        content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 99%;
-    height: 93%;
-    border: 2px dashed rgba(252, 252, 252, 0.664);
-    border-radius: 10px;
-    }
     }
 
     a{

@@ -14,6 +14,7 @@
     &__container{
         height: 100%;
         position: relative;
+        
     }
     &__menu {
         display: flex;
@@ -167,6 +168,7 @@
         @media (max-width: 1050px) {
             font-size: 14px;
         }
+        
     }
 }
 ._header-scroll .menu__logo a img{
@@ -203,6 +205,20 @@
     }
 }
 @media (max-width: $mobile){
+    .menu__phone{
+        display: block;
+        z-index: 4;
+        font-size: 18px;
+        a{
+            padding: 10px 0;
+        }
+    }
+    .menu__list .menu__location{
+        left: 0;
+        position: static;
+        text-align: center;
+        padding-top: 10px;
+    }
     .menu__body{
         position: fixed;
         top: 0;
@@ -230,13 +246,14 @@
         & >:nth-child(2){
             margin-left: 0;
         }
-        & >:last-child{
-            margin-top: 0;
-        }
     }
     .menu__list >:nth-child(n){
         margin-right: 0px;
         margin-top: 15px;
+    }
+    .menu__list >:last-child{
+        
+        margin-top: 30px;
     }
     .menu-open .menu__body{
         left: 0;
