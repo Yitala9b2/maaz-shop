@@ -5,17 +5,58 @@
 .spollers {
 	display: grid;
 	gap: 15px;
+    padding-bottom: 150px;
+    @media (max-width: 767.98px) {
+        padding-bottom: 100px;
+    }
 }
 // Спойлер
-.spollers__item {
+.spollers__questions_item {
 	font-size: rem(20);
+    border-bottom: 1px solid #ffffff59;
 }
 // Заголовок спойлера
 .spollers__title {
 	width: 100%;
-	cursor: default;
+	cursor: pointer;
 	text-align: left;
-	padding: rem(10) rem(15);
+	padding: rem(20) rem(30) rem(20) rem(15);
 	position: relative;
+    &._spoller-active::before{
+        transform: translateX(-75%) rotate(-40deg);
+    }
+    &::before{
+        content: "";
+        transform: translate(-75%, -50%) rotate(40deg);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    background-color: #373737;
+    height: 2px;
+    width: 10px;
+    transition: transform 0.5s ease 0s;
+    }
+    &._spoller-active::after{
+        transform: rotate(40deg);
+    }
+    &::after{
+        transform: translate(0, -50%) rotate(-40deg);
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        background-color: #373737;
+        height: 2px;
+        width: 10px;
+        transition: transform 0.5s ease 0s;
+    }
+}
 
+.spollers__body{
+    line-height: 130%;
+    padding: 1.25rem;
+    border-radius: 0.3125rem;
+    @media (max-width: 767.98px) {
+    font-size: 1rem;
+    }
 }

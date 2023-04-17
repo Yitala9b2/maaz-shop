@@ -115,3 +115,36 @@ if (!contactsTitle) {
     contactsLink.forEach(link => link.removeAttribute('data-goto-header'))
 
 }
+
+
+const productionTechnology = document.querySelectorAll(".production__technology");
+if (productionTechnology) {
+    productionTechnology.forEach((technology => {
+                let sideBlockTagging = technology.querySelector(".technology__title");
+                if ("" == sideBlockTagging.innerText) technology.remove();
+            }));
+}
+            
+
+//const spollerQuestion = document.querySelectorAll(".spollers__questions_item");
+//spollerQuestion.forEach((block => {
+//    let sideBlockTagging = block.querySelector(".spollers__title");
+//    if ("" == sideBlockTagging.innerText) block.remove();
+//}));
+
+//let gallery = document.querySelector('.gallery');
+//    if (gallery) {
+//        let galleryImage = gallery.querySelectorAll('.gallery__image');
+//        galleryImage.forEach((image =>{
+//            if (image.dataset.video) {
+//                let objImageSrc = JSON.parse(image.dataset.video)
+//                let imageSrc = objImageSrc.source[0].src
+//                if (imageSrc.length <=1) {
+//                    image.removeAttribute('data-video')
+//                }
+//                if (imageSrc.length > 1) {
+//                    image.removeAttribute('href')
+//                }
+//            } 
+//        }))
+//    }

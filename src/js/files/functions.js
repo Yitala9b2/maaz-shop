@@ -263,7 +263,7 @@ export function spollers() {
 		if (spollersClose.length) {
 			document.addEventListener("click", function (e) {
 				const el = e.target;
-                e.preventDefault();
+                //e.preventDefault(); // не переходит по ссылкам
 				if (!el.closest('[data-spollers]')) {
 					spollersClose.forEach(spollerClose => {
 						const spollersBlock = spollerClose.closest('[data-spollers]');
