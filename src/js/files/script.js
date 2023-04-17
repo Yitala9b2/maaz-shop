@@ -15,7 +15,7 @@ var  logScrollEvent = function (event) {
 }
 document.addEventListener('scrollStart', logScrollEvent, false);
 //============ПРЕЛОАДЕР================
-window.onload = function() {
+window.addEventListener('load', function() {
     
     setTimeout(function() {
         let preloader = document.getElementById("preloader_malc")
@@ -26,7 +26,7 @@ window.onload = function() {
 
     }, 400);
 
-};
+});
 
   //  ==========================ПОДКЛЮЧЕНИЕ ЯНДЕКС КАРТ И ИХ ПОДГРУЗКА ПО КЛИКУ================
   let map_container = document.getElementById('map_container');
@@ -116,7 +116,7 @@ if (!contactsTitle) {
 
 }
 
-
+window.addEventListener("DOMContentLoaded", (function() {
 const productionTechnology = document.querySelectorAll(".production__technology");
 if (productionTechnology) {
     productionTechnology.forEach((technology => {
@@ -126,25 +126,26 @@ if (productionTechnology) {
 }
             
 
-//const spollerQuestion = document.querySelectorAll(".spollers__questions_item");
-//spollerQuestion.forEach((block => {
-//    let sideBlockTagging = block.querySelector(".spollers__title");
-//    if ("" == sideBlockTagging.innerText) block.remove();
-//}));
+const spollerQuestion = document.querySelectorAll(".spollers__questions_item");
+spollerQuestion.forEach((block => {
+    let sideBlockTagging = block.querySelector(".spollers__title");
+    if ("" == sideBlockTagging.innerText) block.remove();
+}));
 
-//let gallery = document.querySelector('.gallery');
-//    if (gallery) {
-//        let galleryImage = gallery.querySelectorAll('.gallery__image');
-//        galleryImage.forEach((image =>{
-//            if (image.dataset.video) {
-//                let objImageSrc = JSON.parse(image.dataset.video)
-//                let imageSrc = objImageSrc.source[0].src
-//                if (imageSrc.length <=1) {
-//                    image.removeAttribute('data-video')
-//                }
-//                if (imageSrc.length > 1) {
-//                    image.removeAttribute('href')
-//                }
-//            } 
-//        }))
-//    }
+let gallery = document.querySelector('.gallery');
+    if (gallery) {
+        let galleryImage = gallery.querySelectorAll('.gallery__image');
+        galleryImage.forEach((image =>{
+            if (image.dataset.video) {
+                let objImageSrc = JSON.parse(image.dataset.video)
+                let imageSrc = objImageSrc.source[0].src
+                if (imageSrc.length <=1) {
+                    image.removeAttribute('data-video')
+                }
+                if (imageSrc.length > 1) {
+                    image.removeAttribute('href')
+                }
+            } 
+        }))
+    }
+}));

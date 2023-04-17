@@ -17,11 +17,16 @@
 }
 // Заголовок спойлера
 .spollers__title {
+    @media (max-width: 767.98px) {
+        font-size: 1.1rem;
+        padding: rem(15) rem(30) rem(15) rem(0);
+        }
 	width: 100%;
 	cursor: pointer;
 	text-align: left;
-	padding: rem(20) rem(30) rem(20) rem(15);
+	padding: rem(20) rem(30) rem(20) rem(0);
 	position: relative;
+    
     &._spoller-active::before{
         transform: translateX(-75%) rotate(-40deg);
     }
