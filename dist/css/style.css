@@ -1287,7 +1287,7 @@ body::after {
   width: 100%;
   cursor: pointer;
   text-align: left;
-  padding: 1.25rem 1.875rem 1.25rem 0.9375rem;
+  padding: 1.25rem 1.875rem 1.25rem 0rem;
   position: relative;
 }
 
@@ -5505,6 +5505,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .spollers {
     padding-bottom: 100px;
+  }
+
+  .spollers__title {
+    font-size: 1.1rem;
+    padding: 0.9375rem 1.875rem 0.9375rem 0rem;
   }
 
   .spollers__body {

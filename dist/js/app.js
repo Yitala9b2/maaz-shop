@@ -8459,13 +8459,13 @@ PERFORMANCE OF THIS SOFTWARE.
             menuClose();
         };
         document.addEventListener("scrollStart", logScrollEvent, false);
-        window.onload = function() {
+        window.addEventListener("load", (function() {
             setTimeout((function() {
                 let preloader = document.getElementById("preloader_malc");
                 if (preloader) document.getElementById("preloader_malc").style.display = "none";
                 window.scrollBy(0, -5);
             }), 400);
-        };
+        }));
         let map_container = document.getElementById("map_container");
         if (map_container) {
             let options_map = {
@@ -8525,10 +8525,29 @@ PERFORMANCE OF THIS SOFTWARE.
             contactsLink.forEach((link => link.removeAttribute("data-goto")));
             contactsLink.forEach((link => link.removeAttribute("data-goto-header")));
         }
-        const productionTechnology = document.querySelectorAll(".production__technology");
-        if (productionTechnology) productionTechnology.forEach((technology => {
-            let sideBlockTagging = technology.querySelector(".technology__title");
-            if ("" == sideBlockTagging.innerText) technology.remove();
+        window.addEventListener("DOMContentLoaded", (function() {
+            const productionTechnology = document.querySelectorAll(".production__technology");
+            if (productionTechnology) productionTechnology.forEach((technology => {
+                let sideBlockTagging = technology.querySelector(".technology__title");
+                if ("" == sideBlockTagging.innerText) technology.remove();
+            }));
+            const spollerQuestion = document.querySelectorAll(".spollers__questions_item");
+            spollerQuestion.forEach((block => {
+                let sideBlockTagging = block.querySelector(".spollers__title");
+                if ("" == sideBlockTagging.innerText) block.remove();
+            }));
+            let gallery = document.querySelector(".gallery");
+            if (gallery) {
+                let galleryImage = gallery.querySelectorAll(".gallery__image");
+                galleryImage.forEach((image => {
+                    if (image.dataset.video) {
+                        let objImageSrc = JSON.parse(image.dataset.video);
+                        let imageSrc = objImageSrc.source[0].src;
+                        if (imageSrc.length <= 1) image.removeAttribute("data-video");
+                        if (imageSrc.length > 1) image.removeAttribute("href");
+                    }
+                }));
+            }
         }));
         window["FLS"] = true;
         isWebp();
