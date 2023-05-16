@@ -2,7 +2,7 @@
 
 Сайт магазина для школы дизайна MAAZ
 
-
+<p> хостинг:  https://maaz-school.test-handyhost.ru/  </p>
 <p> github pages:  https://yitala9b2.github.io/maaz-shop/  </p>
 
 <div  id="ladesign_description" align="center" >
